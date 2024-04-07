@@ -14,6 +14,14 @@ public class GuestbookService {
 	@Autowired
 	private GuestbookDao guestbookDao;
 	
+	// 삭제
+		public int exeRemove(GuestbookVo guestbookVo) {
+			System.out.println("GuestbookService.exeRemove()");
+
+			int count = guestbookDao.guestbookDelete(guestbookVo);
+			return count;
+		}
+	
 	//저장 + 1개가져오기
 	public GuestbookVo exeAddandGuest(GuestbookVo guestbookVo) {
 		System.out.println("GuestService.exeAddandGuest()");

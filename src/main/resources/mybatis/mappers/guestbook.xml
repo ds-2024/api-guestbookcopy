@@ -61,4 +61,16 @@
 			where no = #{no}
 		]]>
 	</select>
+	<!-- 수정 -->
+	<update id="update" parameterType="com.javaex.vo.GuestbookVo">
+		<![CDATA[
+		update member
+		set
+        	name = #{name},
+        	password = #{password},
+        	content = #{content},
+        	reg_date = #{reg_date}
+		where no = #{no}
+		]]>
+	</update>
 </mapper>

@@ -14,6 +14,14 @@ public class GuestbookDao {
 	@Autowired
 	private SqlSession sqlSession;
 	
+	// 삭제
+		public int guestbookDelete(GuestbookVo guestbookVo){
+			System.out.println("GuestbookDao.guestbookDelete()");
+			
+			int count = sqlSession.delete("guestbook.delete", guestbookVo);
+			return count;
+		}
+	
 	//글저장 by ajax SelectKey
 	public int insertSelectKey(GuestbookVo guestbookVo) {
 		System.out.println("GuestbookDao.insertSelectKey()");
